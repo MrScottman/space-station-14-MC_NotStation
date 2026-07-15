@@ -210,7 +210,7 @@
 - type: marking
   id: GauzeHead
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian, Arachnid, Moth]
+  groupWhitelist: [Reptilian, Arachnid, Moth]
   coloring:
     default:
       type:

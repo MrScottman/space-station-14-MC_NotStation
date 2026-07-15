@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingUniformBase
+  id: Madnessjumpsuitbasic
+  name: Стандартный костюм
+  description: Самый обычный костюм для самых разных целей
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Clothing/Suits/basic.rsi
+  - type: Clothing
+    sprite: _MC-NotStation/Clothing/Suits/basic.rsi

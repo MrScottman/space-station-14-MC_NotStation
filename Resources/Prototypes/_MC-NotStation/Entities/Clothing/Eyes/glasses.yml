@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent: ClothingEyesBase
+  id: Madnessglassesred
+  name: Красные очки
+  description: Стильные очки с красными линзами, чтобы показать всем кто тут действительно решает вопросы
+  components:
+    - type: Sprite
+      sprite: _MC-NotStation/Clothing/Glasses/redagent.rsi
+    - type: Clothing
+      sprite: _MC-NotStation/Clothing/Glasses/redagent.rsi
+
+- type: entity
+  parent: ClothingEyesBase
+  id: Madnessglassessoldatvisor
+  name: Боевой визор
+  description: Похоже, кто-то смог продвинуть идею того, что целиться одним глазом удобнее. Или производитель экономит на линзах
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Clothing/Glasses/soldatvisor.rsi
+  - type: Clothing
+    sprite: _MC-NotStation/Clothing/Glasses/soldatvisor.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95

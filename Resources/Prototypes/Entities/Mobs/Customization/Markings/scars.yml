@@ -1,7 +1,7 @@
 - type: marking
   id: ScarEyeRight
   bodyPart: Head
-  groupWhitelist: [Human]
+  groupWhitelist: []
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_eye_right
@@ -9,7 +9,7 @@
 - type: marking
   id: ScarEyeLeft
   bodyPart: Head
-  groupWhitelist: [Human]
+  groupWhitelist: []
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_eye_left
@@ -43,7 +43,7 @@
 - type: marking
   id: ScarNeck
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_neck
@@ -67,7 +67,7 @@
 - type: marking
   id: ScarFace1
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian, Moth]
+  groupWhitelist: [Reptilian, Moth]
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_face_1
@@ -75,7 +75,7 @@
 - type: marking
   id: ScarFace2
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian, Moth]
+  groupWhitelist: [Reptilian, Moth]
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_face_2
@@ -83,7 +83,7 @@
 - type: marking
   id: ScarEyeRightSmall
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_eye_right_small
@@ -91,7 +91,7 @@
 - type: marking
   id: ScarEyeLeftSmall
   bodyPart: Head
-  groupWhitelist: [Human, Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_eye_left_small
