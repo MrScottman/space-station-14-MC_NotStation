@@ -1,0 +1,17 @@
+﻿- type: Tag
+  id: MadnessSilenser35
+
+- type: entity
+  name: Глушитель калибра .35 авто
+  parent: BaseItem
+  id: MadnessAttachmentSilenser35
+  description: Глушитель для стволов .35 калибра, делает выстрел почти беззвучным. Потребуется подходящее оружие и отвёртка
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Attachments/Silenser35.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - MadnessSilenser35

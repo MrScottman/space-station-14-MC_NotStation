@@ -1,0 +1,20 @@
+﻿- type: Tag
+  id: MadnessScope
+
+- type: entity
+  name: Прицел 2x
+  parent: BaseItem
+  id: MadnessAttachmentScope2x
+  description: Компактный прицел с небольшим увеличением. Потребуется подходящее оружие и отвёртка
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Attachments/Scope2x.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - MadnessScope
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.2

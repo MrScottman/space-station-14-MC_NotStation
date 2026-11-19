@@ -1,0 +1,57 @@
+- type: entity
+  id: MadnessMobsAgentLow
+  parent: MobHuman
+  name: Агент
+  description: Он настроен крайне агрессивно.
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - AgentLowGear
+  - type: InputMover
+  - type: MobMover
+  - type: NPCRangedCombat
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+
+- type: entity
+  id: MadnessMobsEngineerLow
+  parent: MobHuman
+  name: Боевой Инженер
+  description: Он настроен крайне агрессивно.
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - EngineerLowGear
+  - type: InputMover
+  - type: MobMover
+  - type: NPCRangedCombat
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+
+- type: entity
+  id: MadnessMobsSoldat
+  parent: MobHuman
+  name: Солдат
+  description: Он настроен крайне агрессивно.
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: Loadout
+    prototypes:
+      - SoldatGear
+  - type: InputMover
+  - type: MobMover
+  - type: NPCRangedCombat
+  - type: NPCAvoidance
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound

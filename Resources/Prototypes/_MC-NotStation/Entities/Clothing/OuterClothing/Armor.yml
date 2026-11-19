@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: MadnessOuterClothingTightVest
+  name: Узкий бронежилет
+  description: Бронежилет с удобными лямками, благодаря которым его можно крепко закрепить на теле
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Clothing/OuterClothing/TightVest.rsi
+  - type: Clothing
+    sprite: _MC-NotStation/Clothing/OuterClothing/TightVest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.90

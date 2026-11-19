@@ -1,0 +1,113 @@
+- type: entity
+  name: револьвер Компакт-4
+  parent: BaseWeaponRevolver
+  id: MadnessWeaponRevolverCompact4
+  description: Дешёвый гражданский револьвер под патрон .35 авто. Сделан из толстенного низкосортного сплава ради экономии на обработке, из-за чего весит как кирпич и вмещает всего четыре патрона. Имеет дульное устройство
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Guns/Revolvers/compact-4.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Clothing
+    sprite: _MC-NotStation/Weapons/Guns/Revolvers/compact-4.rsi
+  - type: Gun
+    fireRate: 1.2 
+    minAngle: 2 
+    maxAngle: 18
+    soundGunshot:
+      path: /Audio/_MC-NotStation/Guns/Gunshots/compakt4-shot.ogg
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgePistol
+    proto: null
+    capacity: 4
+    chambers: [ False, False, False, False ]
+    ammoSlots: [ null, null, null, null ]
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 7
+    animation: WeaponArcSmash
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: Construction
+    graph: Compact4SilencerGraph
+    node: start
+
+- type: entity
+  name: револьвер Компакт-4 с глушителем
+  parent: MadnessWeaponRevolverCompact4
+  id: MadnessWeaponRevolverCompact4Silensed
+  description: Дешёвый гражданский револьвер под патрон .35 авто. Сделан из толстенного низкосортного сплава ради экономии на обработке, из-за чего весит как кирпич и вмещает всего четыре патрона. Теперь с глушителем.
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Guns/Revolvers/compact-4silensed.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: Clothing
+    sprite: _MC-NotStation/Weapons/Guns/Revolvers/compact-4silensed.rsi
+  - type: Gun
+    fireRate: 1.2 
+    minAngle: 1 
+    maxAngle: 14
+    soundGunshot:
+      path: /Audio/_MC-NotStation/Guns/Gunshots/compakt4silensed-shot.ogg
+  - type: Construction
+    graph: Compact4SilencerGraph
+    node: silenced
+
+- type: constructionGraph
+  id: Compact4SilencerGraph
+  start: start
+  graph:
+  - node: start
+    entity: MadnessWeaponRevolverCompact4
+    edges:
+    - to: silenced
+      conditions:
+      - !type:ContainerEmpty
+        container: revolver-ammo
+      steps:
+      - tag: MadnessSilenser35
+        name: глушитель калибра .35 авто
+        icon:
+          sprite: _MC-NotStation/Weapons/Attachments/Silenser35.rsi
+          state: icon
+        doAfter: 1
+      - tool: Screwing
+        doAfter: 1.5
+
+  - node: silenced
+    entity: MadnessWeaponRevolverCompact4Silensed
+    edges:
+    - to: start
+      conditions:
+      - !type:ContainerEmpty
+        container: revolver-ammo
+      steps:
+      - tool: Screwing
+        doAfter: 1.5
+      completed:
+      - !type:SpawnPrototype
+        prototype: MadnessAttachmentSilenser35
+        amount: 1
+
+- type: construction
+  name: Револьвер Компакт-4 (с глушителем)
+  id: CraftCompact4Silenced
+  graph: Compact4SilencerGraph
+  startNode: start
+  targetNode: silenced
+  category: construction-category-weapons
+  description: Установить глушитель калибра .35 авто на револьвер Компакт-4 с помощью отвёртки.
+  icon:
+    sprite: _MC-NotStation/Weapons/Guns/Revolvers/compact-4silensed.rsi
+    state: icon
+  objectType: Item

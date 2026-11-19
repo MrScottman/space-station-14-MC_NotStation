@@ -88,8 +88,8 @@ public sealed partial class SSDIndicatorSystem : EntitySystem
                 || TerminatingOrDeleted(uid))
                 continue;
 
-            _statusEffects.TryUpdateStatusEffectDuration(uid, StatusEffectSSDSleeping);
-            ssd.NextUpdate += ssd.UpdateInterval;
+            // _statusEffects.TryUpdateStatusEffectDuration(uid, StatusEffectSSDSleeping);
+            // ssd.NextUpdate += ssd.UpdateInterval;
             Dirty(uid, ssd);
         }
     }

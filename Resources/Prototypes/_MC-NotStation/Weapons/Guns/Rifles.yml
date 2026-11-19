@@ -1,0 +1,228 @@
+
+- type: entity
+  name: FAMAS
+  parent: BaseWeaponRifle
+  id: MadnessWeaponRifleFamas
+  description:  Компактный и смертоносный автомат с высоким темпом стрельбы. Питается магазинами .20 калибра.
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/famas.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/famas.rsi
+  - type: Gun
+    fireRate: 7
+    shotsPerBurst: 3
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_MC-NotStation/Guns/Gunshots/famas-shot.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 10
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: MeleeRequiresWield
+  - type: AltFireMelee
+    attackType: Heavy
+
+- type: entity
+  name: Карабин Coyote-PDW
+  parent: BaseWeaponRifle
+  id: MadnessWeaponSniperCoyotePDW
+  description:  Гражданский карабин для самообороны (ага, конечно) под пистолетный патрон .35 авто. Питается соответствующими магазинами
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/coyot.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,0
+  - type: Clothing
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/coyot.rsi
+  - type: Gun
+    ProjectileSpeedModified: 60
+    minAngle: 6
+    maxAngle: 18
+    angleIncrease: 4
+    angleDecay: 12
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_MC-NotStation/Guns/Gunshots/coyot-shot.ogg
+  - type: GunWieldBonus
+    minAngle: -6
+    maxAngle: -16
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: AmmoCounter
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 8
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: MeleeRequiresWield
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: Construction
+    graph: CoyotePDWScopeGraph
+    node: start
+
+- type: entity
+  name: Карабин Coyote-PDW с 2x прицелом
+  parent: MadnessWeaponSniperCoyotePDW
+  id: MadnessWeaponSniperCoyotePDWscoped2x
+  description:  Гражданский карабин для самообороны (ага, конечно) под пистолетный патрон .35 авто. Питается соответствующими магазинами. Установлен прицел с 2-х кратным увеличением
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/coyotscope2x.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,0
+  - type: Clothing
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/coyotscope2x.rsi
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 4
+    pvsIncrease: 0.4
+  - type: Construction
+    graph: CoyotePDWScopeGraph
+    node: scoped
+
+- type: constructionGraph
+  id: CoyotePDWScopeGraph
+  start: start
+  graph:
+  - node: start
+    entity: MadnessWeaponSniperCoyotePDW
+    edges:
+    - to: scoped
+      conditions:
+      - !type:ContainerEmpty
+        container: gun_magazine
+      - !type:ContainerEmpty
+        container: gun_chamber
+      steps:
+      - tag: MadnessScope
+        name: оптический прицел
+        icon:
+          sprite: _MC-NotStation/Weapons/Attachments/scope2x.rsi
+          state: icon
+        doAfter: 1
+      - tool: Screwing
+        doAfter: 1.5
+
+  - node: scoped
+    entity: MadnessWeaponSniperCoyotePDWscoped2x
+    edges:
+    - to: start
+      conditions:
+      - !type:ContainerEmpty
+        container: gun_magazine
+      - !type:ContainerEmpty
+        container: gun_chamber
+      steps:
+      - tool: Screwing
+        doAfter: 1.5
+      completed:
+      - !type:SpawnPrototype
+        prototype: MadnessAttachmentScope2x
+        amount: 1
+
+- type: construction
+  name: Карабин Coyote-PDW (с прицелом)
+  id: CraftCoyotePDWScoped
+  graph: CoyotePDWScopeGraph
+  startNode: start
+  targetNode: scoped
+  category: construction-category-weapons
+  description: Установить оптический прицел на карабин Coyote-PDW с помощью отвёртки.
+  icon:
+    sprite: _MC-NotStation/Weapons/Guns/Rifles/coyotscope2x.rsi
+    state: icon
+  objectType: Item

@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: MadnessShoesclassic
+  name: Чёрные туфли
+  description: Удобные и начищенные чёрные туфли для серьёзных людей.
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Clothing/Shoes/Classic.rsi
+  - type: Clothing
+    sprite: _MC-NotStation/Clothing/Shoes/Classic.rsi
+  - type: Matchbox

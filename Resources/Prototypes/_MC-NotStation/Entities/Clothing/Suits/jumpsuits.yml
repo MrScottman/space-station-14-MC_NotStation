@@ -8,3 +8,14 @@
     sprite: _MC-NotStation/Clothing/Suits/basic.rsi
   - type: Clothing
     sprite: _MC-NotStation/Clothing/Suits/basic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: Madnessjumpsuitengy
+  name: Боевая форма
+  description: Форма из плотной ткани для боевых действий
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Clothing/Suits/engy.rsi
+  - type: Clothing
+    sprite: _MC-NotStation/Clothing/Suits/engy.rsi

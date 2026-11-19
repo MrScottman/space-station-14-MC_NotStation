@@ -1,0 +1,21 @@
+- type: startingGear
+  id: AgentLowGear
+  equipment:
+    jumpsuit: Madnessjumpsuitbasic
+    eyes: Madnessglassesred
+    shoes: MadnessShoesclassic
+
+- type: startingGear
+  id: EngineerLowGear
+  equipment:
+    jumpsuit: Madnessjumpsuitengy
+    head: MadnessMaskEngineerHat
+    shoes: MadnessShoesclassic
+
+- type: startingGear
+  id: SoldatGear
+  equipment:
+    jumpsuit: Madnessjumpsuitengy
+    shoes: MadnessShoesclassic
+    eyes: Madnessglassessoldatvisor
+    outerClothing: MadnessOuterClothingTightVest
