@@ -22,7 +22,7 @@ namespace Content.Server.Construction.Completions
             if (string.IsNullOrEmpty(Prototype))
                 return;
 
-            var coordinates = entityManager.GetComponent<TransformComponent>(uid).Coordinates;
+            var coordinates = entityManager.System<SharedTransformSystem>().GetMapCoordinates(uid);
 
             if (EntityPrototypeHelpers.HasComponent<StackComponent>(Prototype))
             {

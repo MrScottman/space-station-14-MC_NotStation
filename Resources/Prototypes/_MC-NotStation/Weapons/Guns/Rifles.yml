@@ -87,6 +87,7 @@
     sprite: _MC-NotStation/Weapons/Guns/Rifles/coyot.rsi
   - type: Gun
     ProjectileSpeedModified: 60
+    ProjectileSpeed: 60
     minAngle: 6
     maxAngle: 18
     angleIncrease: 4
