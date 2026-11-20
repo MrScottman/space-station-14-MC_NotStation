@@ -1,5 +1,5 @@
 - type: entity
-  name: револьвер Компакт-4
+  name: Compact-4
   parent: BaseWeaponRevolver
   id: MadnessWeaponRevolverCompact4
   description: Дешёвый гражданский револьвер под патрон .35 авто. Сделан из толстенного низкосортного сплава ради экономии на обработке, из-за чего весит как кирпич и вмещает всего четыре патрона. Имеет дульное устройство
@@ -40,7 +40,7 @@
     node: start
 
 - type: entity
-  name: револьвер Компакт-4 с глушителем
+  name: Compact-4 с глушителем
   parent: MadnessWeaponRevolverCompact4
   id: MadnessWeaponRevolverCompact4Silensed
   description: Дешёвый гражданский револьвер под патрон .35 авто. Сделан из толстенного низкосортного сплава ради экономии на обработке, из-за чего весит как кирпич и вмещает всего четыре патрона. Теперь с глушителем.
@@ -59,6 +59,8 @@
     maxAngle: 14
     soundGunshot:
       path: /Audio/_MC-NotStation/Guns/Gunshots/compakt4silensed-shot.ogg
+      params:
+        volume: -8 
   - type: Construction
     graph: Compact4SilencerGraph
     node: silenced

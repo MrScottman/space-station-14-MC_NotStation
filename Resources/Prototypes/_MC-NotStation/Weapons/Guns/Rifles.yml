@@ -67,7 +67,7 @@
     attackType: Heavy
 
 - type: entity
-  name: Карабин Coyote-PDW
+  name: Coyote-PDW
   parent: BaseWeaponRifle
   id: MadnessWeaponSniperCoyotePDW
   description:  Гражданский карабин для самообороны (ага, конечно) под пистолетный патрон .35 авто. Питается соответствующими магазинами
@@ -149,7 +149,7 @@
     node: start
 
 - type: entity
-  name: Карабин Coyote-PDW с 2x прицелом
+  name: Coyote-PDW с 2x прицелом
   parent: MadnessWeaponSniperCoyotePDW
   id: MadnessWeaponSniperCoyotePDWscoped2x
   description:  Гражданский карабин для самообороны (ага, конечно) под пистолетный патрон .35 авто. Питается соответствующими магазинами. Установлен прицел с 2-х кратным увеличением

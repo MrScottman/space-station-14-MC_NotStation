@@ -1,0 +1,73 @@
+- type: entity
+  name: M19-SD
+  parent: BaseWeaponSubMachineGun
+  id: MadnessWeaponSubMachineGunM19SD
+  description: Достаточно скрытный пистолет-пулемёт для спецназа, достаточно громкий для массового производства. Питается магазинами .25 безгильзовым калибром
+  components:
+  - type: Sprite
+    sprite: _MC-NotStation/Weapons/Guns/SMGs/M19SD.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _MC-NotStation/Weapons/Guns/SMGs/M19SD.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -16
+    maxAngle: -14
+  - type: Gun
+    fireRate: 7.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    - Burst
+    burstFireRate: 10
+    shotsPerBurst: 3
+    burstCooldown: 0.3
+    minAngle: 18
+    maxAngle: 26
+    angleIncrease: 3
+    angleDecay: 12
+    soundGunshot:
+      path: /Audio/_MC-NotStation/Guns/Gunshots/silenced-m19sd-shot.ogg
+      params:
+        volume: -6 
+  - type: ChamberMagazineAmmoProvider
+    autoEject: false 
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MadnessMagazinesSMGCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MadnessMagazinesSMGCaselessRifle
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 6
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: MeleeRequiresWield
+  - type: AltFireMelee
+    attackType: Heavy

@@ -96,6 +96,12 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  - type: Hunger
+    baseDecayRate: 0.12
+    starvationDamage:
+      types:
+        Cold: 0.5
+        Bloodloss: 0.5
 
 - type: entity
   parent: OrganBaseOrganic
